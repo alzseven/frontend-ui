@@ -28,7 +28,7 @@ class StationLists extends React.Component {
         </div>
       );
     }
-    if (error === false) {
+    if (error === false && Array.isArray(stations) === true) {
       return (
         <div className={s.root}>
           <h1 className="page-title">

@@ -40,32 +40,29 @@ class Vacancy extends React.Component {
     const { stationData, error, loading } = this.props;
 
     const parkinglotname =
-      stationData[0] === undefined ||
-      stationData[0].parkinglotname === undefined
+      stationData === undefined || stationData.parkingLotName === undefined
         ? ''
-        : stationData[0].parkinglotname;
+        : stationData.parkingLotName;
     const vacancynumber =
-      stationData[0] === undefined || stationData[0].vacancynumber === undefined
+      stationData === undefined || stationData.vacancyNumber === undefined
         ? 0
-        : stationData[0].vacancynumber;
+        : stationData.vacancyNumber;
     const stationColumnNumber =
-      stationData[0] === undefined ||
-      stationData[0].stationColumnNumber === undefined
+      stationData === undefined || stationData.stationColumnNumber === undefined
         ? 0
-        : stationData[0].stationColumnNumber;
+        : stationData.stationColumnNumber;
     const stationRowNumber =
-      stationData[0] === undefined ||
-      stationData[0].stationRowNumber === undefined
+      stationData === undefined || stationData.stationRowNumber === undefined
         ? 0
-        : stationData[0].stationRowNumber;
+        : stationData.stationRowNumber;
     const stationBG =
-      stationData[0] === undefined || stationData[0].stationBG === undefined
+      stationData === undefined || stationData.stationBG === undefined
         ? 0
-        : stationData[0].stationBG;
+        : stationData.stationBG;
     const slotdatas =
-      stationData[0] === undefined || stationData[0].slots === undefined
+      stationData === undefined || stationData.slots === undefined
         ? []
-        : stationData[0].slots;
+        : stationData.slots;
 
     const slotSizeY = CONTAINER_WIDGET_HEIGHT / stationRowNumber - 2;
     const slotSizeX = slotSizeY * 0.75 - 2;

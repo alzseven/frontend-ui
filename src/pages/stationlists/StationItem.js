@@ -6,6 +6,11 @@ import { withCookies } from 'react-cookie';
 
 class StationItem extends Component {
   addToCookie(id) {
+    if (this.props.cookies.get('favorites') === undefined) {
+      this.props.cookies.set('favorites', JSON.stringify(new Array()), {
+        path: '/',
+      });
+    }
     let favs = this.props.cookies.get('favorites');
     const index = favs.indexOf(id);
     if (index === -1) {
@@ -17,6 +22,11 @@ class StationItem extends Component {
   }
 
   removeFromCookie(id) {
+    if (this.props.cookies.get('favorites') === undefined) {
+      this.props.cookies.set('favorites', JSON.stringify(new Array()), {
+        path: '/',
+      });
+    }
     let favs = this.props.cookies.get('favorites');
     const index = favs.indexOf(id);
     if (index > -1) {
@@ -82,7 +92,9 @@ class StationItem extends Component {
           <Button
             outline
             className={`${s.button} ${s.favorite} ${
-              this.props.cookies.get('favorites').indexOf(id) <= -1
+              this.props.cookies.get('favorites') === undefined
+                ? s.nonactive
+                : this.props.cookies.get('favorites').indexOf(id) <= -1
                 ? s.nonactive
                 : ''
             }`}
@@ -93,7 +105,9 @@ class StationItem extends Component {
           <Button
             outline
             className={`${s.button} ${s.nonfavorite} ${
-              this.props.cookies.get('favorites').indexOf(id) > -1
+              this.props.cookies.get('favorites') === undefined
+                ? ''
+                : this.props.cookies.get('favorites').indexOf(id) > -1
                 ? s.nonactive
                 : ''
             }`}
