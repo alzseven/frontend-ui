@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import { Modal, ModalHeader, ModalBody, Row, Col } from 'reactstrap';
-import s from './vacancy.module.scss';
-
 class PhotoPopup extends Component {
   render() {
     return (

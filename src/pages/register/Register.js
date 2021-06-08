@@ -15,7 +15,6 @@ import {
 } from 'reactstrap';
 import Widget from '../../components/Widget';
 import { registerUser, registerError } from '../../actions/register';
-import microsoft from '../../assets/microsoft.png';
 import Login from '../login';
 
 class Register extends React.Component {

@@ -3,7 +3,6 @@ import React from 'react';
 import Widget from '../../../components/Widget';
 
 import s from './Charts.module.scss';
-import { chartData, liveChart, liveChartInterval } from './mock';
 
 import 'echarts/lib/chart/line';
 import 'echarts/lib/chart/pie';
@@ -19,37 +18,6 @@ exporting(Highcharts);
 exportData(Highcharts);
 
 class Charts extends React.Component {
-  state = {
-    cd: chartData,
-    ld: liveChart,
-    initEchartsOptions: {
-      renderer: 'canvas',
-    },
-    sparklineData: {
-      series: [{ data: [1, 7, 3, 5, 7, 8] }],
-      options1: {
-        colors: ['#db2a34'],
-        plotOptions: {
-          bar: {
-            columnWidth: '50%',
-          },
-        },
-      },
-      options2: {
-        colors: ['#2477ff'],
-        plotOptions: {
-          bar: {
-            columnWidth: '50%',
-          },
-        },
-      },
-    },
-  };
-
-  componentWillUnmount() {
-    clearInterval(liveChartInterval);
-  }
-
   render() {
     return (
       <div>

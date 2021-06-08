@@ -15,7 +15,6 @@ import {
 } from 'reactstrap';
 import Widget from '../../components/Widget';
 import { loginUser } from '../../actions/user';
-import microsoft from '../../assets/microsoft.png';
 
 class Login extends React.Component {
   static propTypes = {

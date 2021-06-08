@@ -3,7 +3,6 @@ import cx from 'classnames';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { dismissAlert } from '../../actions/alerts';
 import s from './Sidebar.module.scss';
 import LinksGroup from './LinksGroup';
 
@@ -60,10 +59,6 @@ class Sidebar extends React.Component {
         }, 0);
       }
     }
-  }
-
-  dismissAlert(id) {
-    this.props.dispatch(dismissAlert(id));
   }
 
   doLogout() {

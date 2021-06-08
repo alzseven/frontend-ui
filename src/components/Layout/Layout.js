@@ -5,11 +5,8 @@ import { Switch, Route, withRouter, Redirect } from 'react-router';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import Hammer from 'rc-hammerjs';
 
-import UIIcons from '../../pages/components/icons';
 import UINotifications from '../../pages/notifications';
 import StationList from '../../pages/stationlists';
-import MapsGoogle from '../../pages/components/maps/google';
-import CoreTypography from '../../pages/typography';
 import Charts from '../../pages/components/charts/Charts';
 import Dashboard from '../../pages/dashboard';
 import Vacancy from '../../pages/vacancy';
@@ -19,7 +16,6 @@ import Sidebar from '../Sidebar';
 import BreadcrumbHistory from '../BreadcrumbHistory';
 import { openSidebar, closeSidebar } from '../../actions/navigation';
 import s from './Layout.module.scss';
-import Login from '../../pages/login/Login';
 import Typography from '../../pages/typography';
 
 class Layout extends React.Component {
@@ -86,11 +82,6 @@ class Layout extends React.Component {
                       component={Dashboard}
                     />
                     <Route
-                      path="/app/components/icons"
-                      exact
-                      component={UIIcons}
-                    />
-                    <Route
                       path="/app/notifications"
                       exact
                       component={UINotifications}
@@ -101,11 +92,7 @@ class Layout extends React.Component {
                       component={Charts}
                     />
                     <Route path="/app/tables" exact component={StationList} />
-                    <Route
-                      path="/app/components/maps"
-                      exact
-                      component={MapsGoogle}
-                    />
+
                     <Route
                       path="/app/typography"
                       exact
@@ -119,10 +106,10 @@ class Layout extends React.Component {
                   </Switch>
                 </CSSTransition>
               </TransitionGroup>
-              <footer className={s.contentFooter}>
+              {/* <footer className={s.contentFooter}>
                 Find Park Vacancy Area_Made by Team 9_Jeju UNIV Capstone 3_
                 <a href="https://github.com/capstone3-frontend">GitHubPage</a>
-              </footer>
+              </footer> */}
             </main>
           </Hammer>
         </div>

@@ -10,17 +10,12 @@ import {
   Dropdown,
   DropdownToggle,
   DropdownMenu,
-  DropdownItem,
-  Badge,
   ButtonGroup,
   Button,
 } from 'reactstrap';
-import Notifications from '../Notifications';
 import PowerIcon from '../Icons/HeaderIcons/PowerIcon';
-import BellIcon from '../Icons/HeaderIcons/BellIcon';
 import SettingsIcon from '../Icons/HeaderIcons/SettingsIcon';
 import BurgerIcon from '../Icons/HeaderIcons/BurgerIcon';
-import ArrowIcon from '../Icons/HeaderIcons/ArrowIcon';
 
 import { logoutUser } from '../../actions/user';
 import {
@@ -30,7 +25,7 @@ import {
   changeSidebarVisibility,
 } from '../../actions/navigation';
 
-import avatar from '../../assets/people/a7.jpg';
+import avatar from '../../assets/people/user.png';
 
 import s from './Header.module.scss';
 import 'animate.css';
@@ -45,13 +40,8 @@ class Header extends React.Component {
     super(props);
 
     this.doLogout = this.doLogout.bind(this);
-    this.onDismiss = this.onDismiss.bind(this);
-    this.toggleMessagesDropdown = this.toggleMessagesDropdown.bind(this);
-    this.toggleSupportDropdown = this.toggleSupportDropdown.bind(this);
     this.toggleSettingsDropdown = this.toggleSettingsDropdown.bind(this);
-    this.toggleAccountDropdown = this.toggleAccountDropdown.bind(this);
     this.toggleSidebar = this.toggleSidebar.bind(this);
-    this.toggleSearchOpen = this.toggleSearchOpen.bind(this);
 
     this.state = {
       visible: true,
@@ -70,41 +60,13 @@ class Header extends React.Component {
     });
   };
 
-  onDismiss() {
-    this.setState({ visible: false });
-  }
-
   doLogout() {
     this.props.dispatch(logoutUser());
-  }
-
-  toggleMessagesDropdown() {
-    this.setState({
-      messagesOpen: !this.state.messagesOpen,
-    });
-  }
-
-  toggleSupportDropdown() {
-    this.setState({
-      supportOpen: !this.state.supportOpen,
-    });
   }
 
   toggleSettingsDropdown() {
     this.setState({
       settingsOpen: !this.state.settingsOpen,
-    });
-  }
-
-  toggleAccountDropdown() {
-    this.setState({
-      accountOpen: !this.state.accountOpen,
-    });
-  }
-
-  toggleSearchOpen() {
-    this.setState({
-      searchOpen: !this.state.searchOpen,
     });
   }
 

@@ -38,16 +38,8 @@ class StationItem extends Component {
   }
 
   render() {
-    const {
-      id,
-      thumbnail,
-      name,
-      locationDesc,
-      latitude,
-      longitude,
-      overallSpaces,
-      vacancy,
-    } = this.props;
+    const { id, thumbnail, name, locationDesc, overallSpaces, vacancy } =
+      this.props;
 
     return (
       <tr key={id}>

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Breadcrumb, BreadcrumbItem } from 'reactstrap';
 import uuid from 'uuid/v4';
-import s from './BreadcrumbHistory.scss';
 
 class BreadcrumbHistory extends Component {
   renderBreadCrumbs = () => {
