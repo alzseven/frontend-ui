@@ -39,6 +39,8 @@ class Vacancy extends React.Component {
   render() {
     const { stationData, error, loading } = this.props;
 
+    console.log(stationData);
+
     const parkinglotname =
       stationData === undefined || stationData.parkingLotName === undefined
         ? ''
@@ -65,7 +67,7 @@ class Vacancy extends React.Component {
         : stationData.slots;
 
     const slotSizeY = CONTAINER_WIDGET_HEIGHT / stationRowNumber - 2;
-    const slotSizeX = slotSizeY * 0.75 - 2;
+    const slotSizeX = slotSizeY * 0.5 - 2;
     const paddingX = slotSizeX * 0.5;
     const paddingY = slotSizeY * 0.25;
     const ACTUAL_CONTAINER_WIDTH = CONTAINER_WIDGET_WIDTH - slotSizeX;
