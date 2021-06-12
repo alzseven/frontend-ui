@@ -33,7 +33,9 @@ class Vacancy extends React.Component {
   }
 
   refreshVacany() {
-    this.props.APIActions.getStationData();
+    const query = this.props.location.search.split('=');
+    const stationID = query[1];
+    this.props.APIActions.getStationData(stationID);
   }
 
   render() {
@@ -92,6 +94,13 @@ class Vacancy extends React.Component {
 
           <Row>
             <Col>
+              <Button
+                outline
+                className={s.button}
+                onClick={this.refreshVacany.bind(this)}
+              >
+                Refresh
+              </Button>
               <Widget
                 style={{
                   backgroundImage: `url(${stationBG})`,
@@ -100,12 +109,6 @@ class Vacancy extends React.Component {
                 }}
                 className={s.mainTableWidget}
               >
-                <Button
-                  outline
-                  className={s.button}
-                  onClick={this.refreshVacany.bind(this)}
-                ></Button>
-
                 {slotdatas.map((s) => (
                   <Slot
                     key={`${s.slotID}${uuid()}${uuid()}`}
