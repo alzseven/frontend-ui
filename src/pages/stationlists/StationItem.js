@@ -115,7 +115,7 @@ class StationItem extends Component {
               1 - vacancy / overallSpaces > 0.8
                 ? 'danger'
                 : 1 - vacancy / overallSpaces > 0.6
-                ? 'danger'
+                ? 'warning'
                 : 1 - vacancy / overallSpaces > 0.4
                 ? 'primary'
                 : 'success'
