@@ -78,7 +78,7 @@ class StationItem extends Component {
         </td>
         <td>
           주차장 자리수 : 총 {/* 주차장 빈자리수 : 총  */}
-          <span className="text-muted fw-semi-bold">{vacancy}</span> 개
+          <span className="text-muted fw-semi-bold">{overallSpaces}</span> 개
         </td>
         <td className="text-muted">
           <Button
@@ -111,7 +111,15 @@ class StationItem extends Component {
         <td className="width-150">
           {/* TODO:Fix */}
           <Progress
-            color={'primary'}
+            color={
+              1 - vacancy / overallSpaces > 0.8
+                ? 'danger'
+                : 1 - vacancy / overallSpaces > 0.6
+                ? 'danger'
+                : 1 - vacancy / overallSpaces > 0.4
+                ? 'primary'
+                : 'success'
+            }
             value={(1 - vacancy / overallSpaces) * 100}
             className="progress-sm mb-xs"
           />
