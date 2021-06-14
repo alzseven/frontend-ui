@@ -82,7 +82,7 @@ class Layout extends React.Component {
                       component={Dashboard}
                     />
                     <Route
-                      path="/app/notifications"
+                      path="/app/howtouse"
                       exact
                       component={UINotifications}
                     />
@@ -93,11 +93,7 @@ class Layout extends React.Component {
                     />
                     <Route path="/app/tables" exact component={StationList} />
 
-                    <Route
-                      path="/app/typography"
-                      exact
-                      component={Typography}
-                    />
+                    <Route path="/app/favorites" exact component={Typography} />
                     <Route
                       path="/app/tables/vacancy"
                       exact

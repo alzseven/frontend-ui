@@ -44,7 +44,7 @@ class Sidebar extends React.Component {
           this.element.classList.add(s.sidebarOpen);
         }
       },
-      false
+      false,
     );
   }
 
@@ -112,7 +112,7 @@ class Sidebar extends React.Component {
             header="즐겨찾는 주차장"
             isHeader
             iconName={<TablesIcon className={s.menuIcon} />}
-            link="/app/typography"
+            link="/app/favorites"
             index="tables"
           />
           <LinksGroup
@@ -123,7 +123,7 @@ class Sidebar extends React.Component {
             header="서비스 사용법"
             isHeader
             iconName={<NotificationsIcon className={s.menuIcon} />}
-            link="/app/notifications"
+            link="/app/howtouse"
             index="ui"
           />
           <LinksGroup
